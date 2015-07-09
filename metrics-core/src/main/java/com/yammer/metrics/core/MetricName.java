@@ -165,16 +165,16 @@ public class MetricName implements Comparable<MetricName> {
 
     private static String createMBeanName(String group, String type, String name, String scope) {
         final StringBuilder nameBuilder = new StringBuilder();
-        nameBuilder.append(ObjectName.quote(group));
+        nameBuilder.append(group);
         nameBuilder.append(":type=");
-        nameBuilder.append(ObjectName.quote(type));
+        nameBuilder.append(type);
         if (scope != null) {
             nameBuilder.append(",scope=");
-            nameBuilder.append(ObjectName.quote(scope));
+            nameBuilder.append(scope);
         }
         if (name.length() > 0) {
             nameBuilder.append(",name=");
-            nameBuilder.append(ObjectName.quote(name));
+            nameBuilder.append(name);
         }
         return nameBuilder.toString();
     }
